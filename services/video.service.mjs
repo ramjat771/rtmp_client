@@ -104,28 +104,23 @@ export const generateVideo = async (
     try {
 
         await renderMedia({
-
             composition,
-
             serveUrl,
-
             codec: "h264",
-
             outputLocation,
-
             inputProps: props,
-
             chromiumOptions: {
-
-                browserExecutable:
-                    "/snap/bin/chromium",
-
+                browserExecutable: "/snap/bin/chromium",
                 headless: true,
-
                 gl: "swiftshader",
-
             },
-
+            puppeteerInstance: await openBrowser({
+                browserExecutable: "/snap/bin/chromium",
+                chromiumOptions: {
+                    headless: true,
+                    gl: "swiftshader",
+                },
+            }),
         });
 
         console.log("[18] renderMedia Finished");
