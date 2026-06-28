@@ -3,7 +3,7 @@ import path from "path";
 
 let ffmpeg = null;
 
-export function startStream(videoPath = "assets/video.mp4") {
+export function startStream(videoPath = "out/video.mp4") {
     if (ffmpeg) {
         console.log("Stream already running");
         return;
