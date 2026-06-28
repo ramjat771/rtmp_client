@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { bundle } from "@remotion/bundler";
+import { openBrowser } from "@remotion/renderer";
 import {
     getCompositions,
     renderMedia,
