@@ -1,0 +1,7 @@
+import { Router } from "express";
+import videoRoutes from "./video.routes.mjs";
+const router = Router();
+
+router.use("/video",videoRoutes);
+
+export default router;

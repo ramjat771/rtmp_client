@@ -1,0 +1,23 @@
+{
+  "name": "video_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+ "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.366",
+    "@remotion/bundler": "^4.0.366",
+    "@remotion/renderer": "^4.0.366"
+  }
+}
