@@ -63,8 +63,8 @@ export function startStream(videoPath = "out/video.mp4") {
 
         "-f",
         "flv",
-        // "rtmp://localhost:1935/live/test",
-        "rtmp://72.61.244.242:1935/live/test",
+        "rtmp://localhost:1935/live/test",
+        // "rtmp://72.61.244.242:1935/live/test",
     ]);
     // "rtmp://localhost:1935/live/test",
     ffmpeg.stderr.on("data", (data) => {
