@@ -8,7 +8,14 @@ import { getQuestion } from "./math/question.mjs";
 
 const RESTART_INTERVAL = 25 * 1000;
 
-startStream();
+
+async function startStreamFunction(){
+    const question = getQuestion();
+
+    await generateVideo(question);
+    startStream();
+}
+startStreamFunction();
 
 setInterval(async () => {
 

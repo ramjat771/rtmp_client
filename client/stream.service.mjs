@@ -80,19 +80,27 @@ export function startStream(videoPath = "out/video.mp4") {
 }
 
 export function stopStream() {
-    if (!ffmpeg) {
-        return;
-    }
+    if (!ffmpeg) return;
+
+    ffmpeg.once("close", () => {
+        console.log("FFmpeg actually closed");
+    });
 
     ffmpeg.kill("SIGTERM");
 }
 
 export function restartStream(videoPath) {
-    stopStream();
-
-    setTimeout(() => {
+    if (!ffmpeg) {
         startStream(videoPath);
-    }, 1000);
+        return;
+    }
+
+    ffmpeg.once("close", () => {
+        ffmpeg = null;
+        startStream(videoPath);
+    });
+
+    ffmpeg.kill("SIGTERM");
 }
 
 export function isRunning() {
