@@ -75,6 +75,11 @@ export const generateVideo =
             codec: "h264",
             outputLocation,
             inputProps: props,
+            chromiumOptions: {
+                browserExecutable: "/snap/bin/chromium",
+                headless: true,
+                gl: "swiftshader",
+            },
         });
 
         return {
